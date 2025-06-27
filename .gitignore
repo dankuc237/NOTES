@@ -1,0 +1,8 @@
+# Ignore folders
+.trash/
+00. FROM_GITHUB_MindMap/
+ignore_folder/
+
+
+# Ignore files KALI_WORKSTATION_PROJECT.md
+KALI_WORKSTATION_PROJECT.md

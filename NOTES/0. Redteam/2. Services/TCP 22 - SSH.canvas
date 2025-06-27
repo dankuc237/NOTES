@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"51e30d3ea595ef91","type":"file","file":"NOTES/99. TOOLS/hydra/hydra_ssh.md","x":-310,"y":190,"width":420,"height":50},
+		{"id":"7b0a7e6b8a926231","type":"file","file":"NOTES/99. TOOLS/Metasploit/msf_ssh.md","x":-310,"y":-10,"width":1100,"height":180},
+		{"id":"c2b8944f8283e136","type":"text","text":"# SSH (T:22)\nSSH (Secure Shell) - SSH is a cryptographic remote access protocol that is used to remotely access and control systems over an unsecured network. SSH was developed as a secure successor to telnet.","x":-870,"y":-119,"width":400,"height":209},
+		{"id":"48273629e62a7a76","type":"file","file":"NOTES/99. TOOLS/nmap/nmap_ssh.md","x":-309,"y":-340,"width":1020,"height":290},
+		{"id":"02ba34d7639b588c","x":-309,"y":-500,"width":473,"height":96,"type":"text","text":"# ssh-audit.py\nhttps://github.com/jtesta/ssh-audit"}
+	],
+	"edges":[
+		{"id":"5516a863a0a352b0","fromNode":"c2b8944f8283e136","fromSide":"right","toNode":"51e30d3ea595ef91","toSide":"left","label":"$ hydra"},
+		{"id":"e5eca7cc820bd9cb","fromNode":"c2b8944f8283e136","fromSide":"right","toNode":"7b0a7e6b8a926231","toSide":"left","label":"$ msf"},
+		{"id":"7fd8dc5b2394bd77","fromNode":"c2b8944f8283e136","fromSide":"right","toNode":"48273629e62a7a76","toSide":"left","label":"$ nmap"},
+		{"id":"6a0156909ecbbbf8","fromNode":"c2b8944f8283e136","fromSide":"right","toNode":"02ba34d7639b588c","toSide":"left"}
+	]
+}

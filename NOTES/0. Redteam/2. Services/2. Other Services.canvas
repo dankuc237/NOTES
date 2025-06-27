@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"76952ae4f0707ac0","type":"group","x":-1273,"y":5840,"width":1942,"height":820,"label":"finger"},
+		{"id":"3169619dda9e906b","type":"group","x":-1273,"y":7320,"width":1853,"height":440,"label":"NFS"},
+		{"id":"43657148ab1b7f69","type":"group","x":-1273,"y":6800,"width":2153,"height":360,"label":"Portmapper"},
+		{"id":"355a01d5b8929ae3","type":"group","x":-1273,"y":7880,"width":1586,"height":342,"label":"Portmapper"},
+		{"id":"3548bf9bd21ba69f","x":-445,"y":7731,"width":250,"height":60,"type":"text","text":""},
+		{"id":"c060b94e13859d4a","type":"text","text":"# $ finger\n```bash\n$ finger root@demo3.ine.local\n```","x":-51,"y":5860,"width":548,"height":140},
+		{"id":"7ea07dac85e70ea5","type":"text","text":"# finger (T:79)\nThe Name/Finger protocol and the Finger user information protocol are simple network protocols for the exchange of human-oriented status and user information. The finger daemon runs on TCP port 79. The client will (in the case of remote hosts) open a connection to port 79. An RUIP (Remote User Information Program) is started on the remote end of the connection to process the request. The local host sends the RUIP one line query based upon the Finger query specification, and waits for the RUIP to respond. The RUIP receives and processes the query, returns an answer, then initiates the close of the connection. The local host receives the answer and the close signal, then proceeds to close its end of the connection. **Source:** https://en.wikipedia.org/wiki/Finger_(protocol)","x":-1253,"y":6030,"width":765,"height":340},
+		{"id":"f2104410a1f734c8","type":"text","text":"# $ msf_finger\n```bash\nuse auxiliary/scanner/finger/finger_users\n```","x":-51,"y":6030,"width":548,"height":130},
+		{"id":"fc9ecd681f1bf8b5","type":"text","text":"# $ finger-user-enum.pl\n```bash\n.../finger-user-enum.pl -U <user_worlist> -t <target>\n```","x":-122,"y":6293,"width":771,"height":147},
+		{"id":"4614f3d37d70263d","type":"text","text":"# mount\n```bash\nmkdir /mnt/kenobiNFS  \nmount 10.10.197.171:/var /mnt/kenobiNFS  \nls -la /mnt/kenobiNFS\n```","x":-160,"y":6900,"width":400,"height":240},
+		{"id":"e95861b39f357706","type":"text","text":"port 111 running the service rpcbind. This is just a server that converts remote procedure call (RPC) program number into universal addresses. When an RPC service is started, it tells rpcbind the address at which it is listening and the RPC program number its prepared to serve. ","x":-1253,"y":6889,"width":346,"height":66},
+		{"id":"1dded53f03b769b9","type":"text","text":"# Portmapper (TCP:111) ","x":-1253,"y":6800,"width":313,"height":70},
+		{"id":"035a49271bbd25a4","type":"text","text":"# nmap\n```\n$ nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount <IP>\n```","x":-840,"y":6845,"width":586,"height":145},
+		{"id":"121d120e5c92667e","type":"text","text":"# SCANNING SERVICES","x":-2320,"y":7129,"width":500,"height":165,"color":"1"},
+		{"id":"3fcb2b57fa20a16a","type":"text","text":"# NFS (T:2049/UDP:2049)\nNetwork File System\nRPC-based file sharing protocol often found configured on Unix-like systems, is typically used to provide access to shared resources, and can be found listening on TCP and/or UDP port 2049.\nSince NFS is an RPC-based service and relies on other RPC services, such as “mountd,” it should be directly queried via the Portmapper service which is found on port TCP and/or UDP 111 when using Nmap NSE scripts for instance.","x":-1253,"y":7340,"width":610,"height":316},
+		{"id":"cdbe3ca3daa8d98a","type":"text","text":"# $ nmap\n```bash\n$ nmap --script nfs-ls,nfs-showmount,nfs-statfs <IP> # Acces Rights, Available Export Directory Listings, Available Export\n```","x":-520,"y":7390,"width":1080,"height":150},
+		{"id":"088c684b102c59ce","type":"text","text":"# $ mount\n```bash\n$ mount -t nfs <NFS Server IP>:/home/bob /mnt/home/bob -o nolock # mount the available exported directories to /mnt//home/bob\n```","x":-520,"y":7550,"width":1080,"height":130},
+		{"id":"c5be1017c77df9a0","type":"text","text":"# $ nmap \n```bash\nnmap --script rpc-grind,rpcinfo <IP> –p 111\n```","x":-253,"y":7900,"width":546,"height":143},
+		{"id":"e9d65cec2b6ba0b8","type":"text","text":"# Portmapper (rpcbind) (TCP/UDP:111, TCP/UDP:32771)\nPortmapper is typically found listening on ports  and in some cases, ports , and can be enumerated using Nmap NSE scripts, or by using the built-in “rpcinfo” command. ","x":-1253,"y":7906,"width":860,"height":160},
+		{"id":"6638f34acdbd35be","type":"text","text":"# $ rpcinfo\n```bash\nrpcinfo -p 192.168.13.26\n```","x":-253,"y":8066,"width":433,"height":136},
+		{"id":"705a7f097377a2d4","type":"text","text":"Apache Tomcat (T:8080)","x":-1880,"y":7446,"width":400,"height":104}
+	],
+	"edges":[
+		{"id":"b1ef3a499ff2ad7f","fromNode":"121d120e5c92667e","fromSide":"right","toNode":"705a7f097377a2d4","toSide":"left"},
+		{"id":"ab0ad4bd214bc02c","fromNode":"3fcb2b57fa20a16a","fromSide":"right","toNode":"cdbe3ca3daa8d98a","toSide":"left"},
+		{"id":"85eed66bee7bc9ad","fromNode":"3fcb2b57fa20a16a","fromSide":"right","toNode":"088c684b102c59ce","toSide":"left"},
+		{"id":"737e48e306e7c1c6","fromNode":"e9d65cec2b6ba0b8","fromSide":"right","toNode":"c5be1017c77df9a0","toSide":"left"},
+		{"id":"665fb5c5b41613fc","fromNode":"7ea07dac85e70ea5","fromSide":"right","toNode":"c060b94e13859d4a","toSide":"left","label":"$ finger"},
+		{"id":"cb67635b9437fdb8","fromNode":"7ea07dac85e70ea5","fromSide":"right","toNode":"f2104410a1f734c8","toSide":"left","label":"$ msf"},
+		{"id":"b866e658407e3da8","fromNode":"7ea07dac85e70ea5","fromSide":"right","toNode":"fc9ecd681f1bf8b5","toSide":"left","label":"$ finger-user-enum.pl"},
+		{"id":"e215462c6e56371e","fromNode":"121d120e5c92667e","fromSide":"right","toNode":"7ea07dac85e70ea5","toSide":"left"},
+		{"id":"3c410af7bb4e764a","fromNode":"121d120e5c92667e","fromSide":"right","toNode":"1dded53f03b769b9","toSide":"left"},
+		{"id":"ce96e15ebd18f36c","fromNode":"1dded53f03b769b9","fromSide":"right","toNode":"035a49271bbd25a4","toSide":"left"},
+		{"id":"a83379a043787d4e","fromNode":"035a49271bbd25a4","fromSide":"right","toNode":"4614f3d37d70263d","toSide":"left"}
+	]
+}

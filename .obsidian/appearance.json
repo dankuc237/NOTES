@@ -1,0 +1,13 @@
+{
+  "accentColor": "",
+  "baseFontSize": 16,
+  "theme": "obsidian",
+  "cssTheme": "Obsidian Nord",
+  "showViewHeader": true,
+  "showRibbon": true,
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "no_code_fols",
+    "no_code_folding"
+  ]
+}

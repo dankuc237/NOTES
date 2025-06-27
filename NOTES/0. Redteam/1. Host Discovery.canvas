@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"id":"db9bfaeb09ccd109","type":"group","x":-1240,"y":560,"width":920,"height":1402,"label":"Host discovery"},
+		{"id":"c809ac245dcca06d","type":"text","text":"# $ arp-scan\nSend ARP requests to target hosts and display responses\n* only operates on the local network\n* cannot be routed\n* can be used on interfaces without an IPv4 address \n\n```bash\n$ arp-scan [-I <interface>] <IP>/<mask> # arp scan an IP network with a custom bitmas\n$ arp-scan [-I <interface>] <IP>:<mask> # arp scan an IP network with a custom net mask\n$ arp-scan [-I <interface>] <IP1>-<IP2> # arp scan an IP network within a custom range\n```","x":-1180,"y":580,"width":800,"height":380},
+		{"id":"66e95892f6b58550","type":"file","file":"NOTES/99. TOOLS/nmap/nmap_host_discovery.md","x":-1180,"y":1000,"width":800,"height":280},
+		{"id":"be5962676ad940b9","type":"text","text":"# $ fping\n\n```bash\n$ fping <IP1> [<IP2> ...]# ping, but you can specify any number of targets on the command line\n$ fping <IP> [-a] # ping show only alive host, up hosts\n$ fping -g <IP\\MASK> # ping scan target list\n$ fping <IP> [-q] # ping quiet mode, show only IP adreses \n```","x":-1180,"y":1320,"width":800,"height":240},
+		{"id":"8ac9383afc0f026f","type":"file","file":"NOTES/99. TOOLS/nmap/nmap_basic.md","x":720,"y":1175,"width":920,"height":787},
+		{"id":"166a834da0e1d290","type":"text","text":"# Host Discovery","x":-797,"y":160,"width":275,"height":100,"color":"1"},
+		{"id":"cb71555ad2274fc8","type":"text","text":"# $ netdiscover\nActive/passive ARP reconnaissance tool\n```bash\n$ netdiscover -p # pasive mode\n```\n#TODo","x":-1180,"y":1620,"width":529,"height":300},
+		{"id":"d00c630020c4045a","type":"text","text":"# $ p0f\n```bash\n$ p0f -i <interface> # passive OS detection\n```","x":-1240,"y":-239,"width":520,"height":160},
+		{"id":"567e180f7fb21fe8","type":"text","text":"# banner grabbing\n\n```bash\n$ nc <IP> <PORT>\n```","x":-522,"y":-239,"width":400,"height":161},
+		{"id":"cb20dba16cab6455","type":"text","text":"# primitive host scanner\n```bash\nfor ip in $(seq 1 254); do nc 192.168.50.$ip 445;done\n```","x":-54,"y":743,"width":654,"height":177},
+		{"id":"7cb0ce78e7d4de2c","type":"file","file":"NOTES/99. TOOLS/powercat/powercat.ps1_port_scanner.md","x":-147,"y":1432,"width":840,"height":530},
+		{"id":"8a46b09912d8c6d1","type":"file","file":"NOTES/0. Redteam/2. Services/2. Other Services.canvas","x":1920,"y":1697,"width":680,"height":600}
+	],
+	"edges":[
+		{"id":"4c0622428558a81a","fromNode":"166a834da0e1d290","fromSide":"bottom","toNode":"db9bfaeb09ccd109","toSide":"top","label":"host discovey"},
+		{"id":"3a69ec699e6c8ded","fromNode":"166a834da0e1d290","fromSide":"top","toNode":"d00c630020c4045a","toSide":"bottom","label":"passsive OS detection"},
+		{"id":"240b8f2c861bd511","fromNode":"166a834da0e1d290","fromSide":"top","toNode":"567e180f7fb21fe8","toSide":"bottom","label":"banner grabbing"},
+		{"id":"18947bb339fb504e","fromNode":"db9bfaeb09ccd109","fromSide":"right","toNode":"8ac9383afc0f026f","toSide":"top","label":"Scan for open ports"},
+		{"id":"1d89a4e6d7bf7d7b","fromNode":"db9bfaeb09ccd109","fromSide":"right","toNode":"7cb0ce78e7d4de2c","toSide":"top"},
+		{"id":"2a133e4cb1e05891","fromNode":"8ac9383afc0f026f","fromSide":"right","toNode":"8a46b09912d8c6d1","toSide":"top"}
+	]
+}

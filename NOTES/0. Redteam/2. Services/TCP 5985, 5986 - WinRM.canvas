@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"7f7fb5f055131aed","type":"file","file":"NOTES/98. Theory/WinRM.md","x":-1710,"y":-680,"width":1140,"height":1120},
+		{"id":"4cff2d55e2c94289","type":"file","file":"NOTES/99. TOOLS/Metasploit/msf_winrm.md","x":-297,"y":-383,"width":680,"height":240},
+		{"id":"e3d2f4d0d64b6ab9","type":"file","file":"NOTES/99. TOOLS/netexec(crackmapexec)/netexec_winrm.md","x":-297,"y":-620,"width":687,"height":206},
+		{"id":"a9b632fd602e59d1","type":"file","file":"NOTES/99. TOOLS/evil-WinRM/evil-WinRM.md","x":-297,"y":-100,"width":820,"height":258},
+		{"id":"7bfbd787b86b3bef","type":"file","file":"NOTES/99. TOOLS/netexec(crackmapexec)/netexec_passthe_hash_ticket.md","x":720,"y":-860,"width":660,"height":477},
+		{"id":"2feeb352bb8f3471","type":"file","file":"NOTES/99. TOOLS/evil-WinRM/evil-WinRM passthehash.md","x":720,"y":-211,"width":817,"height":136},
+		{"id":"bfc34314222d469c","type":"file","file":"NOTES/99. TOOLS/evil-WinRM/evil-WinRM execute binary directly from attacker.md","x":720,"y":7,"width":1278,"height":297}
+	],
+	"edges":[
+		{"id":"145e6bb9ea809f96","fromNode":"7f7fb5f055131aed","fromSide":"right","toNode":"4cff2d55e2c94289","toSide":"left","label":"$ msf"},
+		{"id":"0ca9590121af4df6","fromNode":"7f7fb5f055131aed","fromSide":"right","toNode":"e3d2f4d0d64b6ab9","toSide":"left","label":"$ crackmapexec"},
+		{"id":"2cf6c38bd4049c0c","fromNode":"7f7fb5f055131aed","fromSide":"right","toNode":"a9b632fd602e59d1","toSide":"left","label":"$ evil-winrm"},
+		{"id":"70b2b653dae53a25","fromNode":"e3d2f4d0d64b6ab9","fromSide":"right","toNode":"7bfbd787b86b3bef","toSide":"left","label":"pass-the-hash\npass-the-ticket"},
+		{"id":"63a0c14bfa7633e0","fromNode":"a9b632fd602e59d1","fromSide":"right","toNode":"2feeb352bb8f3471","toSide":"left","label":"passthehash"},
+		{"id":"836fc7ed41565c68","fromNode":"a9b632fd602e59d1","fromSide":"right","toNode":"bfc34314222d469c","toSide":"left"}
+	]
+}

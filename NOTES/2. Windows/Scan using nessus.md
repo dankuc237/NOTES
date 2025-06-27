@@ -1,0 +1,13 @@
+For Linux and macOS targets, SSH is used. While we can also use SSH on Windows, in most cases, we will use [_Server Message Block_](https://en.wikipedia.org/wiki/Server_Message_Block) (SMB) and [_Windows Management Instrumentation_](https://en.wikipedia.org/wiki/Windows_Management_Instrumentation) (WMI) to perform authenticated vulnerability scans against Windows targets. Both methods allow us to use local or domain accounts and different authentication options.
+
+To get meaningful results in an authenticated vulnerability scan, we need to ensure that our target system is configured correctly. Depending on the authentication method we want to use, we need to make sure that there is no firewall blocking connections from our scanner. Furthermore, we often find _antivirus_ (AV) programs installed on both Linux and Windows targets. AV may flag the vulnerability scan as malicious and therefore, terminate our connection or render the results useless. Depending on the AV program, we can add an [_exception_](https://community.tenable.com/s/article/Symantec-Endpoint-Protection-interfering-with-Nessus-authenticated-scans) for the authenticated scan or temporarily disable it.
+
+Another Windows security technology we need to consider is [_User Account Control_](https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/user-account-control-overview) (UAC). UAC is a security feature for Windows that allows users to use standard privileges instead of administrator privileges. An administrative user will run most applications and commands with standard privileges and receive administrator privileges only when needed.
+
+Due to the nature of UAC, it can also interfere with our scan. [We can configure UAC to allow Nessus or temporarily disable it](https://docs.tenable.com/nessus/Content/EnableWindowsLoginsForLocalAndRemoteAudits.htm). We should consult the [_Tenable Documentation_](https://docs.tenable.com/nessus/Content/CredentialedChecksOnWindows.htm), especially for Windows targets before we start our first authenticated scan.
+
+Our scan target is a Linux system without AV. Therefore, we can click the arrow next to _Save_ and launch the scan. After the scan has finished, we can review the results. On the _Vulnerabilities_ page, we get a list of the findings for the authenticated scan. In the last section, we had already grouped findings with the _MIXED_ severity. For our authenticated scan, let's disable the grouping of findings by clicking on the wheel and selecting _Disable Groups_.
+
+![Figure 33: Disable Grouped Results](https://offsec-platform-prod.s3.amazonaws.com/offsec-courses/PEN-200/imgs/vulnscan/7975a9534dc0fa3a84a45b1948ec20c4-vulnscan_disableGrouping3R.png)
+
+Figure 33: Disable Grouped Results

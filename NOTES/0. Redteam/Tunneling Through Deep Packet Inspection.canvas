@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"e2a334091da46bb4","type":"text","text":"# HTTP Tunneling\nHiding data within HTTP traffic, which is usually allowed by DPI. The Chisel tool can be used for this purpose.","x":-1120,"y":383,"width":827,"height":177},
+		{"id":"11e1998d491193cd","type":"text","text":"# DNS Tunneling\nUsing the DNS protocol to transmit data in a way that is hidden from DPI.","x":-140,"y":383,"width":825,"height":283},
+		{"id":"76722db1145594b7","type":"text","text":"# Deep Packet Inspection (DPI)\nTechnology that's implemented to monitor traffic based on a set of rules. It's most often used on a network perimeter, where it can highlight patterns that are indicative of compromise.\nTechnique that goes beyond examining just the packet headers and delves into their content. Instead of simply checking IP addresses and port numbers, DPI analyzes the actual data transmitted within packets, allowing for more detailed control and filtering of traffic.\n\n**How does DPI work?**\nDPI works by comparing the contents of packets against a predefined set of rules or signatures. These rules can be based on various criteria, such as: ● **Protocols:** DPI can identify and block or allow traffic based on specific protocols, e.g., blocking SSH (Secure Shell) traffic. ● **File types:** DPI can identify files based on their signatures and block or allow their transmission, e.g., blocking executable files. ● **Keywords:** DPI can scan packet contents for specific keywords and take actions based on their occurrence, e.g., blocking emails containing certain phrases. ● **Traffic patterns:** DPI can identify suspicious traffic patterns, such as port scanning attempts or Denial of Service (DoS) attacks.\n","x":-720,"y":-560,"width":820,"height":580},
+		{"id":"9b50a05a8c59263a","type":"file","file":"NOTES/99. TOOLS/chisel/chisel.md","x":-1660,"y":880,"width":1300,"height":1480},
+		{"id":"4acc334168a8c69a","type":"text","text":"# data exfiltration","x":400,"y":-113,"width":360,"height":133},
+		{"id":"4ad1d85dec1aa63a","x":-140,"y":860,"width":825,"height":500,"type":"text","text":"# $ dnscat2"}
+	],
+	"edges":[
+		{"id":"3f478820d70b4d52","fromNode":"76722db1145594b7","fromSide":"right","toNode":"4acc334168a8c69a","toSide":"top"},
+		{"id":"914e6cbecf8d58c9","fromNode":"4acc334168a8c69a","fromSide":"bottom","toNode":"11e1998d491193cd","toSide":"right"},
+		{"id":"0d0a394d6f779146","fromNode":"11e1998d491193cd","fromSide":"bottom","toNode":"4ad1d85dec1aa63a","toSide":"top"}
+	]
+}

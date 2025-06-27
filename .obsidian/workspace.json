@@ -1,0 +1,252 @@
+{
+  "main": {
+    "id": "19c25d37222799bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "5337450d4913aae7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3103af846274c05c",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "======MENU ======.md",
+                "mode": "preview",
+                "source": true
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "======MENU ======"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a9639c5d41154759",
+    "type": "split",
+    "children": [
+      {
+        "id": "d7989f411481e9ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7f5605c10f9f84f0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "6d98c76b8ddf8582",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "eb339c4731b4194c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "20250507091523",
+                "matchingCase": true,
+                "explainSearch": true,
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "80be752adac81032",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 225.5
+  },
+  "right": {
+    "id": "69d1cfcac9f0122c",
+    "type": "split",
+    "children": [
+      {
+        "id": "6cc9693bc0a3c738",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "43ca962fa0b22e65",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "NOTES/0. Redteam/4. File transfer.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 4. File transfer"
+            }
+          },
+          {
+            "id": "d2b60f890beb9410",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "NOTES/0. Redteam/4. File transfer.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 4. File transfer"
+            }
+          },
+          {
+            "id": "9ef21a58708fa6ce",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "święto/bielicka.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of bielicka"
+            }
+          },
+          {
+            "id": "791348df7014795c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "c07e3f9431c312f9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 298.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "webpage-html-export:Export Vault to HTML": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "graph:Open graph view": false,
+      "workspaces:Manage workspace layouts": false,
+      "switcher:Open quick switcher": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "6d98c76b8ddf8582",
+  "lastOpenFiles": [
+    "ignore_folder/OBSYDIAN/images/Pasted image 20250507091523.png",
+    "ignore_folder/OBSYDIAN/Kulumny.md",
+    "00. FROM_GITHUB_MindMap/README.md",
+    "ignore_folder/OBSYDIAN/Untitled.md",
+    "ignore_folder/OBSYDIAN/Untitled 1.md",
+    "ignore_folder/OBSYDIAN/images",
+    "ignore_folder/OBSYDIAN",
+    "XXX. FROM_GITHUB_MindMap/README.md",
+    "00. FROM_GITHUB_MindMap/source.md",
+    "XXX. FROM_GITHUB_MindMap/source.md",
+    "======MENU ======.md",
+    "NOTES/0. Redteam/C2_RedTeam_INFRA_IDEAS.md",
+    "ignore_folder/KALI_WORKSTATION_PROJECT.md",
+    "ignore_folder/Motorki.md",
+    "NOTES/0. Redteam/notebook.md",
+    "ignore_folder",
+    "00. święto/stankowski.canvas",
+    "00. święto/majkowski.canvas",
+    "00. święto/Kowalewski.canvas",
+    "00. święto/bielicka.canvas",
+    "NOTE_EXAMPLE.md",
+    "KALI_WORKSTATION_PROJECT.md",
+    "Motorki.md",
+    "====== Rozkład Jazdy ======.md",
+    "README.md",
+    "Untitled/Untitled 3",
+    "Untitled/Untitled 2",
+    "Untitled/Untitled 1",
+    "Untitled/Untitled/Untitled 2",
+    "Untitled/Untitled/Untitled 1",
+    "Untitled/Untitled/Untitled/Untitled 3",
+    "Untitled/Untitled/Untitled/Untitled 2",
+    "OBSYDIAN/Untitled.md",
+    "OBSYDIAN/Untitled 1.md",
+    "OBSYDIAN/Kulumny.md",
+    "OBSYDIAN/images/Pasted image 20250507091523.png",
+    "NOTES/99. TOOLS/Wireshark/Wireshark.md",
+    "NOTES/99. TOOLS/Wireshark/$ tcpdump.md",
+    "NOTES/99. TOOLS/Kismet/Kismet.md",
+    "NOTES/99. TOOLS/bettercap/bettercap.md",
+    "NOTES/99. TOOLS/Aircrack-ng Suite/Aircrack-ng Suite.md",
+    "NOTES/96. Wi-fi/WI-FI_2.canvas",
+    "NOTES/96. Wi-fi/Wi-Fi.canvas",
+    "NOTES/96. Wi-fi/images/Pasted image 20250519152517.png",
+    "NOTES/96. Wi-fi/images/Pasted image 20250519150521.png",
+    "NOTES/96. Wi-fi/images/Pasted image 20250515151329.png",
+    "NOTES/96. Wi-fi/images/Pasted image 20250515151232.png",
+    "NOTES/96. Wi-fi/images/Pasted image 20250508090100.png",
+    "NOTES/96. Wi-fi/images/Pasted image 20250508090009.png",
+    "NOTES/96. Wi-fi/images/Pasted image 20250506125055.png",
+    "NOTES/96. Wi-fi/images/Pasted image 20250506102517.png",
+    "00. szkolenie/7. Persistance i antyforensics.canvas",
+    "00. szkolenie/6. Przełamywanie zabezpieczeń - WEB i NEtwork Exploitation.canvas",
+    "00. szkolenie/4. Rekonesans aktywny i fingerprinting.canvas",
+    "00. szkolenie/2. Przygotowanie infrastruktury do prowadzenia operacji.canvas"
+  ]
+}

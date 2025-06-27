@@ -1,0 +1,21 @@
+{
+  "alwaysUpdateLinks": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "livePreview": false,
+  "defaultViewMode": "preview",
+  "attachmentFolderPath": "./images",
+  "promptDelete": false,
+  "readableLineLength": false,
+  "showLineNumber": false,
+  "autoPairBrackets": true,
+  "autoPairMarkdown": false,
+  "showInlineTitle": true,
+  "trashOption": "local",
+  "showUnsupportedFiles": true
+}

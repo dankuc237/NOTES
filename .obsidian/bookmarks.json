@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "type": "folder",
+      "ctime": 1741873803520,
+      "path": "NOTES/0. Redteam"
+    },
+    {
+      "type": "folder",
+      "ctime": 1741873823906,
+      "path": "NOTES/99. TOOLS/mimikatz"
+    },
+    {
+      "type": "file",
+      "ctime": 1741873850057,
+      "path": "NOTES/0. Redteam/5. Pivoting (Port Redirection, Tunelling).canvas"
+    },
+    {
+      "type": "file",
+      "ctime": 1741873857914,
+      "path": "NOTES/0. Redteam/11. Reverse shell.canvas"
+    },
+    {
+      "type": "file",
+      "ctime": 1742392691360,
+      "path": "NOTES/99. TOOLS/ligolo-ng/ligolo-ng.md"
+    }
+  ]
+}

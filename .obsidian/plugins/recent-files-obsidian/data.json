@@ -1,0 +1,208 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Untitled",
+      "path": "ignore_folder/OBSYDIAN/Untitled.md"
+    },
+    {
+      "basename": "Pasted image 20250507091523",
+      "path": "ignore_folder/OBSYDIAN/images/Pasted image 20250507091523.png"
+    },
+    {
+      "basename": "Kulumny",
+      "path": "ignore_folder/OBSYDIAN/Kulumny.md"
+    },
+    {
+      "basename": "README",
+      "path": "00. FROM_GITHUB_MindMap/README.md"
+    },
+    {
+      "basename": "source",
+      "path": "00. FROM_GITHUB_MindMap/source.md"
+    },
+    {
+      "basename": "======MENU ======",
+      "path": "======MENU ======.md"
+    },
+    {
+      "basename": "C2_RedTeam_INFRA_IDEAS",
+      "path": "NOTES/0. Redteam/C2_RedTeam_INFRA_IDEAS.md"
+    },
+    {
+      "basename": "KALI_WORKSTATION_PROJECT",
+      "path": "ignore_folder/KALI_WORKSTATION_PROJECT.md"
+    },
+    {
+      "basename": "Motorki",
+      "path": "ignore_folder/Motorki.md"
+    },
+    {
+      "basename": "KALI_WORKSTATION_PROJECT",
+      "path": "00. KALI WORKSTATION PROJECT/KALI_WORKSTATION_PROJECT.md"
+    },
+    {
+      "basename": "KALI_WORKSTATION_PROJECT",
+      "path": "KALI_WORKSTATION_PROJECT.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "OSI Model",
+      "path": "OSI Model.md"
+    },
+    {
+      "basename": "6.2 Windows Privilege Escalation",
+      "path": "NOTES/2. Windows/6.2 Windows Privilege Escalation.canvas"
+    },
+    {
+      "basename": "11. Reverse shell",
+      "path": "NOTES/0. Redteam/11. Reverse shell.canvas"
+    },
+    {
+      "basename": "mimikatz",
+      "path": "NOTES/99. TOOLS/mimikatz/mimikatz.md"
+    },
+    {
+      "basename": "Bloodhound",
+      "path": "NOTES/99. TOOLS/Bloodhound/Bloodhound.md"
+    },
+    {
+      "basename": "ligolo-ng",
+      "path": "NOTES/99. TOOLS/ligolo-ng/ligolo-ng.md"
+    },
+    {
+      "basename": "4. File transfer",
+      "path": "NOTES/0. Redteam/4. File transfer.canvas"
+    },
+    {
+      "basename": "TCP 445 - SMB",
+      "path": "NOTES/0. Redteam/2. Services/TCP 445 - SMB.canvas"
+    },
+    {
+      "basename": "UDP 161 -  SNMP",
+      "path": "NOTES/0. Redteam/2. Services/UDP 161 -  SNMP.canvas"
+    },
+    {
+      "basename": "0. Usefull Windows Commands",
+      "path": "NOTES/2. Windows/0. Usefull Windows Commands.md"
+    },
+    {
+      "basename": "Windows Privileges and Access Control Mechanisms",
+      "path": "NOTES/2. Windows/Windows Privileges and Access Control Mechanisms.canvas"
+    },
+    {
+      "basename": "utilman.exe trick",
+      "path": "NOTES/2. Windows/utilman.exe trick.md"
+    },
+    {
+      "basename": "Powershell_to_disc_file_download",
+      "path": "NOTES/2. Windows/Powershell/Powershell_to_disc_file_download.md"
+    },
+    {
+      "basename": "WebDAV",
+      "path": "NOTES/99. TOOLS/cadaver/WebDAV.md"
+    },
+    {
+      "basename": "3. AD Enumeration",
+      "path": "NOTES/2. Windows/AD/3. AD Enumeration.canvas"
+    },
+    {
+      "basename": "Code Execution via Windows Library Files",
+      "path": "NOTES/OFFSEC/Code Execution via Windows Library Files.canvas"
+    },
+    {
+      "basename": "powercat.ps1_(reverse)shell",
+      "path": "NOTES/99. TOOLS/powercat/powercat.ps1_(reverse)shell.md"
+    },
+    {
+      "basename": "powercat.ps1_installation",
+      "path": "NOTES/99. TOOLS/powercat/powercat.ps1_installation.md"
+    },
+    {
+      "basename": "powercat.ps1_file_transfer",
+      "path": "NOTES/99. TOOLS/powercat/powercat.ps1_file_transfer.md"
+    },
+    {
+      "basename": "Leveraging MS WORD  macro",
+      "path": "NOTES/OFFSEC/Leveraging MS WORD  macro.canvas"
+    },
+    {
+      "basename": "TCP 25 - SMTP",
+      "path": "NOTES/0. Redteam/2. Services/TCP 25 - SMTP.canvas"
+    },
+    {
+      "basename": "TCP 3389 - RDP",
+      "path": "NOTES/0. Redteam/2. Services/TCP 3389 - RDP.canvas"
+    },
+    {
+      "basename": "UAC (User Account Control)",
+      "path": "NOTES/2. Windows/UAC (User Account Control).md"
+    },
+    {
+      "basename": "Pasted image 20250408144309",
+      "path": "NOTES/2. Windows/images/Pasted image 20250408144309.png"
+    },
+    {
+      "basename": "feroxbuster (content discovery)",
+      "path": "NOTES/0. Redteam/WebAPP/feroxbuster (content discovery).md"
+    },
+    {
+      "basename": "Pasted image 20250408144412",
+      "path": "NOTES/2. Windows/images/Pasted image 20250408144412.png"
+    },
+    {
+      "basename": "6.1 Windows Information Gathering",
+      "path": "NOTES/2. Windows/6.1 Windows Information Gathering.canvas"
+    },
+    {
+      "basename": "TCP 20, 21 - FTP",
+      "path": "NOTES/0. Redteam/2. Services/TCP 20, 21 - FTP.canvas"
+    },
+    {
+      "basename": "0. usefull bash commands",
+      "path": "NOTES/1. Linux/0. usefull bash commands.md"
+    },
+    {
+      "basename": "TCP 3306 - MySQL",
+      "path": "NOTES/0. Redteam/2. Services/TCP 3306 - MySQL.canvas"
+    },
+    {
+      "basename": "netexec",
+      "path": "NOTES/99. TOOLS/netexec(crackmapexec)/netexec.md"
+    },
+    {
+      "basename": "netexec_wmi",
+      "path": "NOTES/99. TOOLS/netexec(crackmapexec)/netexec_wmi.md"
+    },
+    {
+      "basename": "netexec_winrm",
+      "path": "NOTES/99. TOOLS/netexec(crackmapexec)/netexec_winrm.md"
+    },
+    {
+      "basename": "netexec_smb",
+      "path": "NOTES/99. TOOLS/netexec(crackmapexec)/netexec_smb.md"
+    },
+    {
+      "basename": "netexec_passthe_hash_ticket",
+      "path": "NOTES/99. TOOLS/netexec(crackmapexec)/netexec_passthe_hash_ticket.md"
+    },
+    {
+      "basename": "johntheripper",
+      "path": "NOTES/99. TOOLS/john/johntheripper.md"
+    },
+    {
+      "basename": "Kerberos",
+      "path": "NOTES/98. Theory/Kerberos.md"
+    },
+    {
+      "basename": "$ impacket-mssqlclient",
+      "path": "NOTES/99. TOOLS/impacket/$ impacket-mssqlclient.md"
+    }
+  ],
+  "omittedPaths": [],
+  "omittedTags": [],
+  "updateOn": "file-open",
+  "omitBookmarks": false
+}

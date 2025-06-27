@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"35c3e2a70bb88cd5","type":"text","text":"# # Windows libraries\nLibraries are virtual containers for users' content. A library can contain files and folders stored on the local computer or **in a remote storage location**.\nhttps://learn.microsoft.com/en-us/windows/client-management/client-tools/windows-libraries","x":-159,"y":-207,"width":759,"height":187},
+		{"id":"0dd927f95a38151d","type":"text","text":"# Library Object\n## config.Library-ms\n```xml\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<libraryDescription xmlns=\"http://schemas.microsoft.com/windows/2009/library\">\n    <name>@windows.storage.dll,-34582</name>\n    <version>6</version>\n    <isLibraryPinned>true</isLibraryPinned>\n    <iconReference>imageres.dll,-1003</iconReference>\n    <templateInfo>\n        <folderType>{7d49d726-3c21-4f05-99aa-fdc2c9474656}</folderType>\n    </templateInfo>\n    <searchConnectorDescriptionList>\n        <searchConnectorDescription>\n            <isDefaultSaveLocation>true</isDefaultSaveLocation>\n            <isSupported>false</isSupported>\n            <simpleLocation>\n                <url>http://<WebDAV_server_IP></url> # change IP address !!!!!!!!!!!!!!!!!!!!!!!!!\n            </simpleLocation>\n        </searchConnectorDescription>\n    </searchConnectorDescriptionList>\n</libraryDescription>\n```\n![[WebDAV#wsgidav]]","x":-160,"y":180,"width":900,"height":820}
+	],
+	"edges":[
+		{"id":"e4ec89060cf64f80","fromNode":"35c3e2a70bb88cd5","fromSide":"bottom","toNode":"0dd927f95a38151d","toSide":"top"}
+	]
+}

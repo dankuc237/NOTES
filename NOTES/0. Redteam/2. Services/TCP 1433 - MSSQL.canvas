@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"ea9177786904f451","type":"text","text":"# MSSQL\nis a database management system that natively integrates into the Windows ecosystem.","x":-125,"y":-30,"width":485,"height":130},
+		{"id":"4e66f05d44f315a8","type":"text","text":"# Windows tool\nhttps://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-utility?view=sql-server-ver16&tabs=go%2Cwindows&pivots=cs1-bash\n```Powershell\nPS> sqlcmd\n```","x":637,"y":-298,"width":683,"height":218},
+		{"id":"2959d56fcad66bd6","type":"file","file":"NOTES/99. TOOLS/impacket/$ impacket-mssqlclient.md","x":637,"y":-40,"width":883,"height":700},
+		{"id":"7a148f9756c83c24","type":"file","file":"NOTES/0. Redteam/WebAPP/sqlmap.md","x":-20,"y":280,"width":480,"height":400},
+		{"id":"0e17d0f3c220779b","type":"link","url":"https://book.hacktricks.xyz/network-services-pentesting/pentesting-mssql-microsoft-sql-server#manual-enumeration","x":1320,"y":680,"width":868,"height":510},
+		{"id":"daa08cbc918c7d4d","type":"link","url":"https://notes.qazeer.io/l7/methodology-14#information-gathering-and-data-retrieval","x":1320,"y":1220,"width":741,"height":588},
+		{"id":"ae07ffe092f15c99","type":"text","text":"|   |   |\n|---|---|\n|MSSQL version|`SELECT @@version`|\n|Current database username|`SELECT USER_NAME()` `SELECT CURRENT_USER`|\n|Current logged in account|`SELECT SYSTEM_USER`|\n|List the users in the current database|`SELECT name, create_date, modify_date, type_desc, authentication_type_desc FROM sys.database_principals ORDER BY create_date DESC`|\n|Users' passwords|Using `sqlmap`: `sqlmap -D master -T sys.sql_logins --dump [...]`|\n|Current database|`SELECT DB_NAME()`|\n|Databases|`SELECT name FROM master.sys.databases`|\n|List tables of the specified database|`SELECT TABLE_NAME FROM [<DATABASE>].INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'`|\n|List columns of the specified table|`SELECT COLUMN_NAME FROM [<DATABASE>].INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '<TABLE>' ORDER BY ORDINAL_POSITION`|\n|Select all data from the specified table|`SELECT * FROM <TABLE>` `SELECT * FROM [<DATABSE>].<. \\| dbo \\| SCHEMA>.<TABLE>`|","x":2160,"y":1220,"width":939,"height":524},
+		{"id":"d2f774a69e4f6ce9","x":-125,"y":800,"width":400,"height":400,"type":"link","url":"https://portswigger.net/web-security/sql-injection/cheat-sheet"}
+	],
+	"edges":[
+		{"id":"27815f85fa0eac83","fromNode":"ea9177786904f451","fromSide":"right","toNode":"4e66f05d44f315a8","toSide":"left"},
+		{"id":"845204b617b35bf7","fromNode":"ea9177786904f451","fromSide":"right","toNode":"2959d56fcad66bd6","toSide":"left"},
+		{"id":"cb737f1118e7adb2","fromNode":"2959d56fcad66bd6","fromSide":"bottom","toNode":"0e17d0f3c220779b","toSide":"left"},
+		{"id":"b9066124e7e17640","fromNode":"2959d56fcad66bd6","fromSide":"bottom","toNode":"daa08cbc918c7d4d","toSide":"left"},
+		{"id":"559e14dfc0e64024","fromNode":"daa08cbc918c7d4d","fromSide":"right","toNode":"ae07ffe092f15c99","toSide":"left"},
+		{"id":"205ab8efbb5b7d6d","fromNode":"ea9177786904f451","fromSide":"bottom","toNode":"7a148f9756c83c24","toSide":"top"}
+	]
+}

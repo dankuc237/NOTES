@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"29dda3f99df742c5","x":-125,"y":-30,"width":365,"height":90,"color":"1","type":"text","text":"# Discover Wi-Fi Networks"},
+		{"id":"e240a98c6022bade","x":-420,"y":219,"width":360,"height":141,"type":"text","text":"# Kismet\n```bash\n$ kismet\n```"},
+		{"id":"f0b358edb73df44b","x":40,"y":228,"width":720,"height":352,"type":"text","text":"# Aircrack-ng\n```bash\n$ airodump-ng <interface>\n$ airodump-ng -c 1,6,11 # listen on specific channels \n$ airodump-ng -w <file_name> # save result to file\n$ airodump-ng -b <BSSID> # connect to particular target AP\n\n$ aireplay-ng -0 <num> -c <client_mac> -a <BSSID> <intf> # deauthentication attack\n# <num> stands for deauth attack repeated for num times or use 0 (zero) for infinite loop\n# <client mac> is the victim client MAC address \n# <BSSID> is the target BSSID (the AP MAC address) \n# <intf> is your monitoring interface\n```\n```bash\n$ airmon-ng start <interface> # start monitor mode, creates new network interface mon0\n$ iwconfig mon0 channel 11 # set listening on speified channel\n```"}
+	],
+	"edges":[
+		{"id":"751597e8a697e31e","fromNode":"29dda3f99df742c5","fromSide":"bottom","toNode":"e240a98c6022bade","toSide":"top"},
+		{"id":"c978f73455514c5a","fromNode":"29dda3f99df742c5","fromSide":"bottom","toNode":"f0b358edb73df44b","toSide":"top"}
+	]
+}

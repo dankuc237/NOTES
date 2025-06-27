@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"b85adb0a158aa068","type":"text","text":"# SNMP (U:161)\n**Simple Network Management Protocol**\n\n","x":-1200,"y":-338,"width":560,"height":130},
+		{"id":"ce5f9e9a438f3517","type":"file","file":"NOTES/99. TOOLS/nmap/nmap_snmp.md","x":-300,"y":-580,"width":1500,"height":298},
+		{"id":"0967ce7e550f22ea","type":"text","text":"# $ onesixtyone\n```bash\n$ onesixtyone <host> <community>\n$ onesixtyone -i <host_file> -c <community_file>\n\n$ onesixtyone -c /usr/share/seclists/Discovery/SNMP/snmp.txt <target-ip>\n```\n```bash\n$ echo public > community_strings\n$ echo private >> community_strings\n$ echo manager >> community_strings\n$ for ip in $(seq 1 254); do echo 192.168.50.$ip; done > ips\n\n$ onesixtyone -c community_strings -i ips\n```","x":-300,"y":-157,"width":780,"height":457},
+		{"id":"15ddba3324d48ea1","type":"text","text":"# find SNMP services","x":-80,"y":-260,"width":420,"height":82},
+		{"id":"ea896dbe5e3d536b","type":"text","text":"# querying them for specific MIB data","x":460,"y":-238,"width":638,"height":60},
+		{"id":"f9d862b36c29fdd5","type":"text","text":"# $ snmpset","x":-313,"y":1062,"width":250,"height":60},
+		{"id":"2afade88563b260b","type":"text","text":"# Windows SNMP MIB values\n| MIB Value  | specific Microsoft Windows SNMP parameters  |\n|---|:---:|\n|1.3.6.1.2.1.25.1.6.0|System Processes|\n|1.3.6.1.2.1.25.4.2.1.2|Running Programs|\n|1.3.6.1.2.1.25.4.2.1.4|Processes Path|\n|1.3.6.1.2.1.25.2.3.1.4|Storage Units|\n|1.3.6.1.2.1.25.6.3.1.2|Installed Software Name|\n|1.3.6.1.4.1.77.1.2.25|User Accounts|\n|1.3.6.1.2.1.6.13.1.3|Listening TCP Local Ports|","x":554,"y":1000,"width":646,"height":352},
+		{"id":"117ae53663f64816","type":"text","text":"# Translate MIB values to descriptivestrings\n1. download and install snmp-mibs-downloader\n   ```bash\n   $ sudo apt install snmp-mibs-downloader\n   $ sudo download-mibs\n\t```\n1. comment out 4th line in` /etc/snmp/snmp.conf`","x":-2,"y":1046,"width":520,"height":414},
+		{"id":"4e96f1b427354aa8","type":"text","text":"# ### Brute Force the Community Names\n```bash\n$ hydra -P /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings.txt <target-ip> snmp\n```","x":-300,"y":340,"width":1004,"height":230},
+		{"id":"e0eacc6d7b953b67","type":"text","text":"# snmp-check\n```bash\nsnmp-check 192.168.113.145 -c public\n```","x":560,"y":-68,"width":560,"height":188,"color":"4"},
+		{"id":"f30ead9bbd793da0","type":"file","file":"NOTES/99. TOOLS/snmpwalk/snmpwalk.md","x":779,"y":135,"width":1200,"height":410}
+	],
+	"edges":[
+		{"id":"0559d3a9e0f8ea4e","fromNode":"b85adb0a158aa068","fromSide":"right","toNode":"ce5f9e9a438f3517","toSide":"left","label":"$ nmap"},
+		{"id":"cede9fb0e200757c","fromNode":"b85adb0a158aa068","fromSide":"right","toNode":"f9d862b36c29fdd5","toSide":"left","label":"$ snmpset"},
+		{"id":"207feb24b4f0a3fa","fromNode":"b85adb0a158aa068","fromSide":"right","toNode":"0967ce7e550f22ea","toSide":"left","label":"$ onesixtyone"},
+		{"id":"29919295f2498deb","fromNode":"0967ce7e550f22ea","fromSide":"right","toNode":"f30ead9bbd793da0","toSide":"left"},
+		{"id":"75943e719a7bdde0","fromNode":"15ddba3324d48ea1","fromSide":"right","toNode":"ea896dbe5e3d536b","toSide":"left"},
+		{"id":"4c7b7d65f4f94130","fromNode":"2afade88563b260b","fromSide":"top","toNode":"f30ead9bbd793da0","toSide":"bottom"},
+		{"id":"09d74088127551ec","fromNode":"117ae53663f64816","fromSide":"right","toNode":"2afade88563b260b","toSide":"left","fromEnd":"arrow"},
+		{"id":"9168e98b711ce6a9","fromNode":"b85adb0a158aa068","fromSide":"right","toNode":"4e96f1b427354aa8","toSide":"left","fromEnd":"arrow","label":"$ hydra"},
+		{"id":"db5a995c05b79ba0","fromNode":"0967ce7e550f22ea","fromSide":"right","toNode":"e0eacc6d7b953b67","toSide":"left"}
+	]
+}

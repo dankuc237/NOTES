@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"1b28e2c1cf1aa961","type":"text","text":"# FTP (T:20,21)\nused to facilitate file sharing between a server and client/clients and vice versa.","x":-809,"y":-40,"width":400,"height":147},
+		{"id":"e2a23df5900e40a2","type":"text","text":"# $ ftp\n```bash\nftp ftp://[USER[:PASSWORD]@]HOST[:PORT]/PATH[/][;type=TYPE]\nftp http://[USER[:PASSWORD]@]HOST[:PORT]/PATH\nftp https://[USER[:PASSWORD]@]HOST[:PORT]/PATH\n```\n```bash\n$ ftp <IP> \n> user: anonymous  # anonymous login\n> password: password \n> ftp> ls \n> ftp> get filename.txt\n```","x":-149,"y":161,"width":789,"height":433},
+		{"id":"489cb383bee45d8b","type":"file","file":"NOTES/99. TOOLS/Metasploit/msf_ftp.md","x":-149,"y":-54,"width":596,"height":120},
+		{"id":"2d5b0cb87c28b8c9","x":-149,"y":-240,"width":949,"height":92,"type":"text","text":"```bash\nhydra -C /usr/share/seclists/Passwords/Default-Credentials/ftp-betterdefaultpasslist.txt 10.10.10.98 ftp\n```"},
+		{"id":"522ec9d33d1760ac","type":"file","file":"NOTES/99. TOOLS/nmap/nmap_ftp.md","x":-149,"y":-520,"width":1109,"height":200}
+	],
+	"edges":[
+		{"id":"7a65083c26bf7dd8","fromNode":"1b28e2c1cf1aa961","fromSide":"right","toNode":"e2a23df5900e40a2","toSide":"left","label":"$ ftp"},
+		{"id":"fc3be7ddef4499bd","fromNode":"1b28e2c1cf1aa961","fromSide":"right","toNode":"522ec9d33d1760ac","toSide":"left","label":"$ nmap"},
+		{"id":"90db54805cc0dd6b","fromNode":"1b28e2c1cf1aa961","fromSide":"right","toNode":"489cb383bee45d8b","toSide":"left","label":"$ msf"},
+		{"id":"d3ceea8ad2cbc3f7","fromNode":"1b28e2c1cf1aa961","fromSide":"right","toNode":"2d5b0cb87c28b8c9","toSide":"left"}
+	]
+}

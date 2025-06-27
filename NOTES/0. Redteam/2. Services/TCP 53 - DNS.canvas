@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"65a48b993955eb0d","type":"text","text":"# DNS Zone transfer\n\nhttps://book.hacktricks.xyz/network-services-pentesting/pentesting-dns#zone-transfer\n\n```bash\n$ dig axfr [@<DNS_IP>] #Try DNS zone transfer without domain\n$ dig axfr  <DOMAIN> [@<DNS_IP>] #Try DNS zone transfer guessing the domain\n$ host -t axfr witrap.com 192.214.31.3\n```","x":-241,"y":383,"width":756,"height":300},
+		{"id":"cbd446669685962b","type":"file","file":"NOTES/99. TOOLS/dns/$ nslookup.md","x":-241,"y":-160,"width":841,"height":490},
+		{"id":"e65c786539ccd2bc","type":"text","text":"# manual\n```bash\n# get all record types about www.megacorpone.com from DNS 192.168.114.100\n$ host www.megacorpone.com 192.168.114.100 -a  \n$ dig www.megacorpone.com @192.168.114.100 -t ANY \n$ nslookup -query=ANY www.megacorpone.com 192.168.114.100\n\n# reverse lookup\n$ host 192.168.114.100 192.168.114.100\n$ dig -x 192.168.114.100 @192.168.114.100\n$ nslookup 192.168.114.100 192.168.114.100\n```","x":-1084,"y":-139,"width":698,"height":300},
+		{"id":"2c5434089dad3963","type":"file","file":"NOTES/99. TOOLS/dns/$ dnsenum.md","x":636,"y":-209,"width":940,"height":220},
+		{"id":"f844a5c8269e65a0","type":"file","file":"NOTES/99. TOOLS/dns/$ dnsrecon.md","x":-1104,"y":-529,"width":1100,"height":259},
+		{"id":"5468a35f165937fe","type":"text","text":"# $ fierce\nTODO: rozszerzyć\nbruteforcing subdomains, finding IP, zone transfers\nhttps://github.com/mschwager/fierce\n```bash\n$ fierce --domain <DOMAIN> --dns-servers <DNS_IP> #Will try toperform a zone transfer against every authoritative name server and if this doesn'twork, will launch a dictionary attack\n```","x":636,"y":-529,"width":931,"height":280},
+		{"id":"3e5b61eeabda7cb5","type":"text","text":"# $ dnsmap\n```bash\n$ dnsmap <domain> # subdomain bruteforce using builtin list\n$ dnsmap <domain> [-w <wordlist-file>] # subdomain bruteforce using  external wordlist\n```","x":636,"y":-734,"width":931,"height":165},
+		{"id":"d80b6dfeb2604862","type":"text","text":"# msf_dns\n```bash\nauxiliary/gather/enum_dns\n```","x":160,"y":-734,"width":445,"height":131},
+		{"id":"44aa0e8d77f24332","type":"text","text":"# DNS (T:53)\n","x":-1604,"y":-454,"width":400,"height":90},
+		{"id":"826725fd3c13aded","x":-1084,"y":283,"width":604,"height":717,"type":"link","url":"https://one.one.one.one/help/"}
+	],
+	"edges":[
+		{"id":"ebdb84d8996831ce","fromNode":"e65c786539ccd2bc","fromSide":"right","toNode":"65a48b993955eb0d","toSide":"left"},
+		{"id":"ecf00525f335b754","fromNode":"e65c786539ccd2bc","fromSide":"right","toNode":"cbd446669685962b","toSide":"left"},
+		{"id":"5a745afe9a83c8ef","fromNode":"44aa0e8d77f24332","fromSide":"bottom","toNode":"e65c786539ccd2bc","toSide":"left"},
+		{"id":"7abf8d29ac51d52d","fromNode":"44aa0e8d77f24332","fromSide":"right","toNode":"f844a5c8269e65a0","toSide":"left"}
+	]
+}

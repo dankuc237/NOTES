@@ -1,0 +1,30 @@
+{
+	"nodes":[
+		{"id":"77376c3ce558868f","type":"group","x":-2080,"y":-960,"width":960,"height":2240,"label":"DIY exploit"},
+		{"id":"3b977b26b8cff939","type":"text","text":"# $ backdor factory\nhttps://www.kali.org/tools/backdoor-factory/\nhttps://www.youtube.com/watch?v=BMj3ves5DUw\nhttps://github.com/secretsquirrel/the-backdoor-factory","x":-1580,"y":-940,"width":440,"height":220},
+		{"id":"10b133bf46fb2e1f","type":"text","text":"## $ Villain\n[[Villain]]","x":-2060,"y":-940,"width":460,"height":110},
+		{"id":"0760a9f253c00a17","type":"text","text":"# GAINING ACCES","x":-1460,"y":-1320,"width":339,"height":109,"color":"1"},
+		{"id":"8428c4b9e68714d9","type":"text","text":"DICT ATTACK","x":-984,"y":-1320,"width":250,"height":60},
+		{"id":"38d12beedad1f3e1","type":"text","text":"# Hash type identification\n```bash\n$ hashid -j # hash type for JtR\n$P$BGrGrgf2wToBS79i07Rk9sN4Fzk.TV.\nAnalyzing '$P$BGrGrgf2wToBS79i07Rk9sN4Fzk.TV.'\n[+] Wordpress ≥ v2.6.2 [JtR Format: phpass]\n","x":-1138,"y":-1614,"width":558,"height":240},
+		{"id":"aa7e1d61aa91d193","type":"text","text":"EXPLOITS","x":-984,"y":-1080,"width":250,"height":80},
+		{"id":"ef711d5682a02f2e","type":"file","file":"NOTES/99. TOOLS/Metasploit/msf_msfvenom.md","x":-2060,"y":-710,"width":920,"height":1970},
+		{"id":"d9d1e8e31db6da58","type":"text","text":"# Lista PoC na GH dla każdego CVE (API)\n## https://poc-in-github.motikan2010.net/\n## https://poc-in-github.motikan2010.net/api/v1/?cve_id=cve-2021-44228","x":600,"y":-730,"width":880,"height":200},
+		{"id":"37d2be857da55ab3","type":"text","text":"https://book.hacktricks.xyz/generic-methodologies-and-resources/brute-force","x":-339,"y":-1040,"width":779,"height":51},
+		{"id":"d094fe70b4f0fdce","type":"file","file":"NOTES/99. TOOLS/crunch/crunch.md","x":-339,"y":-1200,"width":333,"height":120},
+		{"id":"1579f716edf9252b","type":"file","file":"NOTES/99. TOOLS/john/johntheripper.md","x":-339,"y":-2040,"width":979,"height":780},
+		{"id":"0319be1696b32049","type":"text","text":"# wyszukiwarki CVE\nhttps://vulners.com/\nhttps://www.cve.org/  \nhttps://nvd.nist.gov/vuln/full-listing\n\n# Lista exploitów dla poszczególnych CVE i innych:  \nhttps://www.exploit-db.com/\n\n# Lista PoC na GH dla każdego CVE:  \nhttps://github.com/nomi-sec/PoC-in-GitHub\n\n# gdzie szukać exploitów (przydate strony)\n1. https://packetstormsecurity.com/\n2. Searchsploit - https://www.exploit-db.com/\n3. https://gitlab.com/exploit-database/exploitdb-bin-sploits\n4. https://www.rapid7.com/db/\n5. https://github.com/nomi-sec/PoC-in-GitHub","x":-339,"y":-940,"width":680,"height":780},
+		{"id":"689880091f2e3176","x":-3120,"y":-2142,"width":1171,"height":1057,"type":"file","file":"NOTES/99. TOOLS/nmap/nmap_vuln_vulnscan_vulners.md"}
+	],
+	"edges":[
+		{"id":"72f8fdbd7eab706c","fromNode":"aa7e1d61aa91d193","fromSide":"bottom","toNode":"77376c3ce558868f","toSide":"right","label":"make exploit"},
+		{"id":"0aa8107d40463184","fromNode":"aa7e1d61aa91d193","fromSide":"right","toNode":"0319be1696b32049","toSide":"left","label":"search for exploit"},
+		{"id":"0745deb7c8a9f54c","fromNode":"0760a9f253c00a17","fromSide":"bottom","toNode":"aa7e1d61aa91d193","toSide":"top"},
+		{"id":"e95540581ef96fb5","fromNode":"0760a9f253c00a17","fromSide":"right","toNode":"8428c4b9e68714d9","toSide":"left"},
+		{"id":"04a6cea67e7b348a","fromNode":"8428c4b9e68714d9","fromSide":"right","toNode":"d094fe70b4f0fdce","toSide":"left"},
+		{"id":"89fac5421543b5c1","fromNode":"8428c4b9e68714d9","fromSide":"right","toNode":"1579f716edf9252b","toSide":"left"},
+		{"id":"f1daa899ca2a888f","fromNode":"8428c4b9e68714d9","fromSide":"top","toNode":"38d12beedad1f3e1","toSide":"bottom"},
+		{"id":"c95caf3af48cb6ab","fromNode":"8428c4b9e68714d9","fromSide":"right","toNode":"37d2be857da55ab3","toSide":"left"},
+		{"id":"462280190ec9a654","fromNode":"0319be1696b32049","fromSide":"right","toNode":"d9d1e8e31db6da58","toSide":"left"},
+		{"id":"c508378d84134810","fromNode":"0760a9f253c00a17","fromSide":"left","toNode":"689880091f2e3176","toSide":"right"}
+	]
+}
