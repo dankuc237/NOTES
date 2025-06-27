@@ -22,8 +22,23 @@
               "icon": "lucide-file",
               "title": "======MENU ======"
             }
+          },
+          {
+            "id": "a4166269fe0a888c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NOTES/0. Redteam/RESOURCES.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "RESOURCES"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -191,20 +206,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6d98c76b8ddf8582",
+  "active": "a4166269fe0a888c",
   "lastOpenFiles": [
+    "NOTES/0. Redteam/C2_RedTeam_INFRA_IDEAS.md",
+    "NOTES/0. Redteam/RESOURCES.md",
+    "NOTES/0. Redteam/5.1 Tunneling Through Deep Packet Inspection.canvas",
+    "======MENU ======.md",
+    "ignore_folder/OBSYDIAN/Untitled.md",
     "ignore_folder/OBSYDIAN/images/Pasted image 20250507091523.png",
     "ignore_folder/OBSYDIAN/Kulumny.md",
     "00. FROM_GITHUB_MindMap/README.md",
-    "ignore_folder/OBSYDIAN/Untitled.md",
     "ignore_folder/OBSYDIAN/Untitled 1.md",
     "ignore_folder/OBSYDIAN/images",
     "ignore_folder/OBSYDIAN",
     "XXX. FROM_GITHUB_MindMap/README.md",
     "00. FROM_GITHUB_MindMap/source.md",
     "XXX. FROM_GITHUB_MindMap/source.md",
-    "======MENU ======.md",
-    "NOTES/0. Redteam/C2_RedTeam_INFRA_IDEAS.md",
     "ignore_folder/KALI_WORKSTATION_PROJECT.md",
     "ignore_folder/Motorki.md",
     "NOTES/0. Redteam/notebook.md",
@@ -233,7 +250,6 @@
     "NOTES/99. TOOLS/Wireshark/$ tcpdump.md",
     "NOTES/99. TOOLS/Kismet/Kismet.md",
     "NOTES/99. TOOLS/bettercap/bettercap.md",
-    "NOTES/99. TOOLS/Aircrack-ng Suite/Aircrack-ng Suite.md",
     "NOTES/96. Wi-fi/WI-FI_2.canvas",
     "NOTES/96. Wi-fi/Wi-Fi.canvas",
     "NOTES/96. Wi-fi/images/Pasted image 20250519152517.png",
@@ -246,7 +262,6 @@
     "NOTES/96. Wi-fi/images/Pasted image 20250506102517.png",
     "00. szkolenie/7. Persistance i antyforensics.canvas",
     "00. szkolenie/6. Przełamywanie zabezpieczeń - WEB i NEtwork Exploitation.canvas",
-    "00. szkolenie/4. Rekonesans aktywny i fingerprinting.canvas",
-    "00. szkolenie/2. Przygotowanie infrastruktury do prowadzenia operacji.canvas"
+    "00. szkolenie/4. Rekonesans aktywny i fingerprinting.canvas"
   ]
 }

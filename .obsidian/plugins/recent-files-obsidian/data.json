@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "RESOURCES",
+      "path": "NOTES/0. Redteam/RESOURCES.md"
+    },
+    {
+      "basename": "C2_RedTeam_INFRA_IDEAS",
+      "path": "NOTES/0. Redteam/C2_RedTeam_INFRA_IDEAS.md"
+    },
+    {
+      "basename": "5.1 Tunneling Through Deep Packet Inspection",
+      "path": "NOTES/0. Redteam/5.1 Tunneling Through Deep Packet Inspection.canvas"
+    },
+    {
+      "basename": "======MENU ======",
+      "path": "======MENU ======.md"
+    },
+    {
       "basename": "Untitled",
       "path": "ignore_folder/OBSYDIAN/Untitled.md"
     },
@@ -19,14 +35,6 @@
     {
       "basename": "source",
       "path": "00. FROM_GITHUB_MindMap/source.md"
-    },
-    {
-      "basename": "======MENU ======",
-      "path": "======MENU ======.md"
-    },
-    {
-      "basename": "C2_RedTeam_INFRA_IDEAS",
-      "path": "NOTES/0. Redteam/C2_RedTeam_INFRA_IDEAS.md"
     },
     {
       "basename": "KALI_WORKSTATION_PROJECT",
@@ -191,14 +199,6 @@
     {
       "basename": "johntheripper",
       "path": "NOTES/99. TOOLS/john/johntheripper.md"
-    },
-    {
-      "basename": "Kerberos",
-      "path": "NOTES/98. Theory/Kerberos.md"
-    },
-    {
-      "basename": "$ impacket-mssqlclient",
-      "path": "NOTES/99. TOOLS/impacket/$ impacket-mssqlclient.md"
     }
   ],
   "omittedPaths": [],
